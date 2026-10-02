@@ -1,0 +1,421 @@
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.contenedor h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+
+/* ================================
+   BOTONES ANTERIOR / SIGUIENTE
+================================ */
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 30px;
+}
+
+/* Botones pequeños */
+
+.botones button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Texto Pokémon 1 - 20 */
+
+.botones span {
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 130px;
+  text-align: center;
+  color: #333;
+}
+
+
+/* ================================
+   LISTA DE LOS 20 POKÉMON
+================================ */
+
+.lista-pokemon {
+  display: grid;
+
+  /* 5 Pokémon por fila */
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 20px;
+
+  margin-bottom: 40px;
+}
+
+
+/* ================================
+   TARJETAS PEQUEÑAS
+================================ */
+
+.pokemon-mini-card {
+  cursor: pointer;
+
+  border: none;
+  border-radius: 15px;
+
+  background: white;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Efecto al pasar el mouse */
+
+.pokemon-mini-card:hover {
+  transform: translateY(-6px) scale(1.03);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Imagen de cada Pokémon */
+
+.pokemon-mini-card img {
+  width: 100%;
+  height: 150px;
+
+  object-fit: contain;
+
+  padding: 10px;
+
+  background: #f5f5f5;
+}
+
+
+/* Información de la tarjeta */
+
+.pokemon-mini-card .card-body {
+  padding: 10px;
+}
+
+
+/* Nombre */
+
+.pokemon-mini-card .card-title {
+  margin: 0;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  color: #050000;
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.modal-content {
+  border-radius: 18px;
+
+  border: none;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Cabecera del Modal */
+
+.modal-header {
+  background: #dc3545;
+
+  color: white;
+
+  border-bottom: none;
+
+  padding: 15px 20px;
+}
+
+
+/* Título del Modal */
+
+.modal-title {
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+
+/* Botón X */
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+
+/* ================================
+   IMAGEN DEL POKÉMON EN EL MODAL
+================================ */
+
+.pokemon-modal-img {
+  display: block;
+
+  width: 250px;
+  height: 250px;
+
+  object-fit: contain;
+
+  margin: 0 auto 20px;
+
+  background: #f5f5f5;
+
+  border-radius: 50%;
+
+  padding: 15px;
+}
+
+
+/* ================================
+   INFORMACIÓN DEL POKÉMON
+================================ */
+
+.pokemon-modal-info {
+  text-align: left;
+
+  padding: 0 15px;
+}
+
+
+/* Nombre */
+
+.pokemon-modal-info h4 {
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  color: #222;
+}
+
+
+/* Datos */
+
+.pokemon-modal-info p {
+  margin: 8px 0;
+
+  font-size: 15px;
+
+  color: #444;
+}
+
+
+/* Texto en negrita */
+
+.pokemon-modal-info strong {
+  color: #222;
+}
+
+
+/* ================================
+   PIE DEL MODAL
+================================ */
+
+.modal-footer {
+  border-top: none;
+
+  padding: 15px 20px;
+}
+
+
+/* Botón cerrar */
+
+.modal-footer button {
+  padding: 6px 15px;
+
+  font-size: 14px;
+
+  border-radius: 6px;
+}
+
+
+/* ================================
+   FONDO GENERAL
+================================ */
+
+body {
+  margin: 0;
+
+  background: #f2f2f2;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* ================================
+   TABLETS
+================================ */
+
+@media (max-width: 992px) {
+
+  .lista-pokemon {
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+  }
+
+  .pokemon-mini-card img {
+    height: 140px;
+  }
+}
+
+
+/* ================================
+   CELULARES GRANDES
+================================ */
+
+@media (max-width: 768px) {
+
+  .contenedor {
+    width: 94%;
+
+    margin-top: 20px;
+  }
+
+  .contenedor h1 {
+    font-size: 30px;
+  }
+
+  .lista-pokemon {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+  }
+
+  .pokemon-mini-card img {
+    height: 120px;
+  }
+
+  .pokemon-mini-card .card-title {
+    font-size: 13px;
+  }
+}
+
+
+/* ================================
+   CELULARES PEQUEÑOS
+================================ */
+
+@media (max-width: 576px) {
+
+  .contenedor {
+    width: 95%;
+  }
+
+  .contenedor h1 {
+    font-size: 26px;
+
+    margin-bottom: 15px;
+  }
+
+
+  /* Botones pequeños y ordenados */
+
+  .botones {
+    gap: 8px;
+
+    margin: 15px 0 25px;
+  }
+
+
+  .botones button {
+    padding: 5px 9px;
+
+    font-size: 12px;
+  }
+
+
+  .botones span {
+    font-size: 12px;
+
+    min-width: 100px;
+  }
+
+
+  /* Dos Pokémon por fila */
+
+  .lista-pokemon {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+  }
+
+
+  .pokemon-mini-card img {
+    height: 120px;
+  }
+
+
+  .pokemon-mini-card .card-title {
+    font-size: 12px;
+  }
+
+
+  /* Modal */
+
+  .pokemon-modal-img {
+    width: 200px;
+
+    height: 200px;
+  }
+
+
+  .pokemon-modal-info h4 {
+    font-size: 20px;
+  }
+
+
+  .pokemon-modal-info p {
+    font-size: 14px;
+  }
+}
+.shiny-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.shiny-button button {
+  padding: 7px 18px;
+  font-size: 14px;
+  border-radius: 8px;
+}
